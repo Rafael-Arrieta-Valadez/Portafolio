@@ -16,9 +16,10 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#3b82f6', 
-                        dark: '#0f172a',
-                        card: '#1e293b',
+                        primary: '#eab308', // Dorado (Yellow-500 base)
+                        gold: '#d4af37',    // Dorado metálico clásico
+                        dark: '#0a0a0a',    // Negro casi puro
+                        card: '#171717',    // Gris muy oscuro
                     }
                 }
             }
@@ -39,17 +40,26 @@
             }
         }
 
+        /* Gradiente Dorado */
         .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #a855f7);
+            background: linear-gradient(to right, #facc15, #ca8a04, #facc15);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
 
         /* Solución para el hover en dispositivos táctiles */
         @media (hover: none) {
             .project-overlay {
                 opacity: 1 !important;
-                background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+                background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             }
             .project-btn {
                 transform: scale(1) !important;
@@ -63,20 +73,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0 font-bold text-xl text-white tracking-wider cursor-pointer" onclick="window.scrollTo(0,0)">
-                    DEV<span class="text-blue-500">PORTFOLIO</span>
+                    DEV<span class="text-yellow-500">PORTFOLIO</span>
                 </div>
                 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#inicio" class="hover:text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all">Inicio</a>
-                        <a href="#proyectos" class="hover:text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all">Proyectos</a>
-                        <a href="#habilidades" class="hover:text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all">Habilidades</a>
-                        <a href="#contacto" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-blue-500/30">Contáctame</a>
+                        <a href="#inicio" class="hover:text-yellow-400 hover:bg-white/5 px-3 py-2 rounded-md text-sm font-medium transition-all">Inicio</a>
+                        <a href="#proyectos" class="hover:text-yellow-400 hover:bg-white/5 px-3 py-2 rounded-md text-sm font-medium transition-all">Proyectos</a>
+                        <a href="#habilidades" class="hover:text-yellow-400 hover:bg-white/5 px-3 py-2 rounded-md text-sm font-medium transition-all">Habilidades</a>
+                        <a href="#contacto" class="ml-4 bg-yellow-600 hover:bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-yellow-500/20">Contáctame</a>
                     </div>
                 </div>
 
                 <div class="-mr-2 flex md:hidden">
-                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
                         <span class="sr-only">Abrir menú</span>
                         <i class="fas fa-bars text-xl transition-transform" id="menu-icon"></i>
                     </button>
@@ -84,12 +94,12 @@
             </div>
         </div>
 
-        <div class="hidden md:hidden bg-card border-b border-gray-700 absolute w-full" id="mobile-menu">
+        <div class="hidden md:hidden bg-card border-b border-gray-800 absolute w-full" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-2xl">
-                <a href="#inicio" class="mobile-link text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-3 rounded-md text-base font-medium">Inicio</a>
-                <a href="#proyectos" class="mobile-link text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-3 rounded-md text-base font-medium">Proyectos</a>
-                <a href="#habilidades" class="mobile-link text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-3 rounded-md text-base font-medium">Habilidades</a>
-                <a href="#contacto" class="mobile-link text-white bg-blue-600 hover:bg-blue-700 block px-3 py-3 rounded-md text-base font-medium mt-4 text-center mx-2">
+                <a href="#inicio" class="mobile-link text-gray-300 hover:text-yellow-400 hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium">Inicio</a>
+                <a href="#proyectos" class="mobile-link text-gray-300 hover:text-yellow-400 hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium">Proyectos</a>
+                <a href="#habilidades" class="mobile-link text-gray-300 hover:text-yellow-400 hover:bg-gray-800 block px-3 py-3 rounded-md text-base font-medium">Habilidades</a>
+                <a href="#contacto" class="mobile-link text-dark bg-yellow-500 hover:bg-yellow-400 block px-3 py-3 rounded-md text-base font-bold mt-4 text-center mx-2">
                     <i class="fas fa-paper-plane mr-2"></i> Contáctame
                 </a>
             </div>
@@ -97,26 +107,26 @@
     </nav>
 
     <section id="inicio" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-        <div class="absolute top-20 left-0 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-0 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute top-20 left-0 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-yellow-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-0 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="fade-in-up">
-                <h2 class="text-blue-500 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-4 inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
+                <h2 class="text-yellow-500 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-4 inline-block px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
                     Desarrollador Web & UI Designer
                 </h2>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                     Creando experiencias <br class="hidden sm:block">
-                    <span class="gradient-text">digitales únicas</span>
+                    <span class="gradient-text">digitales</span>
                 </h1>
                 <p class="mt-4 max-w-2xl mx-auto text-base sm:text-xl text-gray-400 mb-8 px-4">
-                    Transformo ideas en realidad a través de código limpio y diseño moderno. Especializado en sitios web responsivos y aplicaciones interactivas.
+                    Transformo ideas en realidad a través de código limpio, diseño elegante y atención al detalle. 
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 px-8 sm:px-0">
-                    <a href="#proyectos" class="w-full sm:w-auto px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg transition-all shadow-lg shadow-blue-500/30 hover:-translate-y-1">
+                    <a href="#proyectos" class="w-full sm:w-auto px-8 py-3.5 border border-transparent text-base font-bold rounded-lg text-dark bg-yellow-500 hover:bg-yellow-400 md:py-4 md:text-lg transition-all shadow-lg shadow-yellow-500/20 hover:-translate-y-1">
                         Ver Mis Proyectos
                     </a>
-                    <a href="#contacto" class="w-full sm:w-auto px-8 py-3.5 border border-gray-600 text-base font-medium rounded-lg text-gray-300 hover:text-white hover:border-white hover:bg-white/5 md:py-4 md:text-lg transition-all">
+                    <a href="#contacto" class="w-full sm:w-auto px-8 py-3.5 border border-gray-700 text-base font-medium rounded-lg text-gray-300 hover:text-yellow-400 hover:border-yellow-500/50 hover:bg-yellow-500/5 md:py-4 md:text-lg transition-all">
                         Hablemos
                     </a>
                 </div>
@@ -128,73 +138,95 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mis Proyectos</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+                <div class="w-20 h-1 bg-gradient-to-r from-yellow-600 to-yellow-300 mx-auto rounded-full"></div>
                 <p class="mt-4 text-gray-400 text-sm sm:text-base">Una selección de mis trabajos recientes.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-52 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bambu Villas Wellness" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="https://bambuvillaswellnes.com/" target="_blank" class="project-btn bg-white text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-blue-50">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
+                    <div class="relative overflow-hidden h-60 shrink-0">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Fira Fresh" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://www.firafresh.com" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-blue-400 text-xs font-bold uppercase tracking-wider bg-blue-500/10 px-2 py-1 rounded">Wellness</span>
+                            <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">E-Commerce / Food</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Bambu Villas Wellness</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Fira Fresh</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">
+                            Plataforma web especializada en productos frescos. Diseño limpio y enfocado en la calidad del producto.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-300 font-mono mt-auto">
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">Web Design</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">Market</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
+                    <div class="relative overflow-hidden h-60 shrink-0">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bambu Villas Wellness" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://bambuvillaswellnes.com/" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">Wellness</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Bambu Villas Wellness</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Plataforma web para centro de bienestar. Galerías inmersivas y diseño relajante.
                         </p>
                         <div class="flex flex-wrap gap-2 text-xs text-gray-300 font-mono mt-auto">
-                            <span class="bg-gray-700/50 border border-gray-700 px-2 py-1 rounded">HTML5</span>
-                            <span class="bg-gray-700/50 border border-gray-700 px-2 py-1 rounded">CSS3</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">HTML5</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">CSS3</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-52 shrink-0">
+                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
+                    <div class="relative overflow-hidden h-60 shrink-0">
                         <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sushi Dragon" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="https://sushidragon.me" target="_blank" class="project-btn bg-white text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-red-50">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <a href="https://sushidragon.me" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-red-400 text-xs font-bold uppercase tracking-wider bg-red-500/10 px-2 py-1 rounded">Restaurante</span>
+                            <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">Restaurante</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-red-400 transition-colors">Sushi Dragon</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Sushi Dragon</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Sitio web vibrante para restaurante japonés. Menú interactivo y reservas.
                         </p>
                         <div class="flex flex-wrap gap-2 text-xs text-gray-300 font-mono mt-auto">
-                            <span class="bg-gray-700/50 border border-gray-700 px-2 py-1 rounded">JS</span>
-                            <span class="bg-gray-700/50 border border-gray-700 px-2 py-1 rounded">UI/UX</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">JS</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">UI/UX</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-52 shrink-0">
+                <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
+                    <div class="relative overflow-hidden h-60 shrink-0">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="App Utopia" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="http://app-utopia.me/" target="_blank" class="project-btn bg-white text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-purple-50">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <a href="http://app-utopia.me/" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
-                            <span class="text-purple-400 text-xs font-bold uppercase tracking-wider bg-purple-500/10 px-2 py-1 rounded">App Landing</span>
+                            <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">App Landing</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">App Utopia</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">App Utopia</h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Landing page moderna optimizada para conversión y descargas.
                         </p>
                         <div class="flex flex-wrap gap-2 text-xs text-gray-300 font-mono mt-auto">
-                            <span class="bg-gray-700/50 border border-gray-700 px-2 py-1 rounded">Mobile First</span>
+                            <span class="bg-gray-800 border border-gray-700 px-2 py-1 rounded text-yellow-500/80">Mobile First</span>
                         </div>
                     </div>
                 </article>
@@ -203,27 +235,27 @@
         </div>
     </section>
 
-    <section id="habilidades" class="py-16 bg-gradient-to-b from-dark to-card">
+    <section id="habilidades" class="py-16 bg-gradient-to-b from-dark to-black border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-white mb-10">Stack Tecnológico</h2>
             <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-                <div class="flex flex-col items-center justify-center p-4 bg-dark/50 border border-gray-800 rounded-xl hover:border-blue-500 hover:bg-dark transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
+                <div class="flex flex-col items-center justify-center p-4 bg-card border border-gray-800 rounded-xl hover:border-yellow-500 hover:bg-white/5 transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
                     <i class="fab fa-html5 text-4xl mb-2 text-gray-500 group-hover:text-orange-500 transition-colors"></i>
                     <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white">HTML5</span>
                 </div>
-                <div class="flex flex-col items-center justify-center p-4 bg-dark/50 border border-gray-800 rounded-xl hover:border-blue-500 hover:bg-dark transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
+                <div class="flex flex-col items-center justify-center p-4 bg-card border border-gray-800 rounded-xl hover:border-yellow-500 hover:bg-white/5 transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
                     <i class="fab fa-css3-alt text-4xl mb-2 text-gray-500 group-hover:text-blue-500 transition-colors"></i>
                     <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white">CSS3</span>
                 </div>
-                <div class="flex flex-col items-center justify-center p-4 bg-dark/50 border border-gray-800 rounded-xl hover:border-blue-500 hover:bg-dark transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
+                <div class="flex flex-col items-center justify-center p-4 bg-card border border-gray-800 rounded-xl hover:border-yellow-500 hover:bg-white/5 transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
                     <i class="fab fa-js text-4xl mb-2 text-gray-500 group-hover:text-yellow-400 transition-colors"></i>
                     <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white">JavaScript</span>
                 </div>
-                <div class="flex flex-col items-center justify-center p-4 bg-dark/50 border border-gray-800 rounded-xl hover:border-blue-500 hover:bg-dark transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
+                <div class="flex flex-col items-center justify-center p-4 bg-card border border-gray-800 rounded-xl hover:border-yellow-500 hover:bg-white/5 transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
                     <i class="fab fa-react text-4xl mb-2 text-gray-500 group-hover:text-cyan-400 transition-colors"></i>
                     <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white">React</span>
                 </div>
-                <div class="flex flex-col items-center justify-center p-4 bg-dark/50 border border-gray-800 rounded-xl hover:border-blue-500 hover:bg-dark transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
+                <div class="flex flex-col items-center justify-center p-4 bg-card border border-gray-800 rounded-xl hover:border-yellow-500 hover:bg-white/5 transition-all duration-300 w-24 h-24 sm:w-28 sm:h-28 group">
                     <i class="fas fa-database text-4xl mb-2 text-gray-500 group-hover:text-green-500 transition-colors"></i>
                     <span class="text-xs sm:text-sm font-medium text-gray-400 group-hover:text-white">SQL</span>
                 </div>
@@ -231,14 +263,14 @@
         </div>
     </section>
 
-    <footer id="contacto" class="bg-dark pt-16 pb-8 border-t border-gray-800">
+    <footer id="contacto" class="bg-black pt-16 pb-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">¿Tienes un proyecto en mente?</h2>
             <p class="text-gray-400 mb-8 max-w-xl mx-auto text-sm sm:text-base">
                 Estoy disponible para colaboraciones. ¡Hagamos algo increíble juntos!
             </p>
             
-            <a href="mailto:chavitos18@outlook.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg transform hover:scale-105 transition-all">
+            <a href="mailto:chavitos18@outlook.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-black bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-300 shadow-lg shadow-yellow-500/20 transform hover:scale-105 transition-all">
                 <i class="fas fa-envelope mr-2"></i> Envíame un correo
             </a>
 
@@ -273,7 +305,6 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            // Cambiar icono de hamburguesa a X
             if (menu.classList.contains('hidden')) {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
@@ -283,7 +314,6 @@
             }
         });
 
-        // Cerrar menú al hacer clic en un enlace (Mejora UX en móvil)
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
@@ -292,7 +322,7 @@
             });
         });
 
-        // Scroll suave compatible
+        // Scroll suave
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -300,7 +330,6 @@
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
-                    // Ajuste para el header fijo
                     const headerOffset = 60;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
