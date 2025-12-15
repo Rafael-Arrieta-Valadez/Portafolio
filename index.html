@@ -16,17 +16,16 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#eab308', // Dorado (Yellow-500 base)
-                        gold: '#d4af37',    // Dorado metálico clásico
-                        dark: '#0a0a0a',    // Negro casi puro
-                        card: '#171717',    // Gris muy oscuro
+                        primary: '#eab308', 
+                        gold: '#d4af37',
+                        dark: '#0a0a0a',
+                        card: '#171717',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Animaciones suaves */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
@@ -40,7 +39,6 @@
             }
         }
 
-        /* Gradiente Dorado */
         .gradient-text {
             background: linear-gradient(to right, #facc15, #ca8a04, #facc15);
             -webkit-background-clip: text;
@@ -55,16 +53,7 @@
             }
         }
 
-        /* Solución para el hover en dispositivos táctiles */
-        @media (hover: none) {
-            .project-overlay {
-                opacity: 1 !important;
-                background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            }
-            .project-btn {
-                transform: scale(1) !important;
-            }
-        }
+        /* NOTA: He eliminado el bloque @media (hover: none) que oscurecia la imagen en celular */
     </style>
 </head>
 <body class="bg-dark text-gray-300 antialiased font-sans overflow-x-hidden">
@@ -117,7 +106,7 @@
                 </h2>
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                     Creando experiencias <br class="hidden sm:block">
-                    <span class="gradient-text">digitales</span>
+                    <span class="gradient-text">digitales de oro</span>
                 </h1>
                 <p class="mt-4 max-w-2xl mx-auto text-base sm:text-xl text-gray-400 mb-8 px-4">
                     Transformo ideas en realidad a través de código limpio, diseño elegante y atención al detalle. 
@@ -145,17 +134,25 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
                 <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-60 shrink-0">
+                    <a href="https://www.firafresh.com" target="_blank" class="relative overflow-hidden h-60 shrink-0 block cursor-pointer">
                         <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Fira Fresh" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="https://www.firafresh.com" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <span class="bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></span>
                         </div>
-                    </div>
+                        
+                        <div class="absolute bottom-3 right-3 bg-black/60 p-2 rounded-full md:hidden">
+                            <i class="fas fa-external-link-alt text-yellow-500 text-sm"></i>
+                        </div>
+                    </a>
+
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
                             <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">E-Commerce / Food</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Fira Fresh</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                            <a href="https://www.firafresh.com" target="_blank">Fira Fresh</a>
+                        </h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Plataforma web especializada en productos frescos. Diseño limpio y enfocado en la calidad del producto.
                         </p>
@@ -167,17 +164,24 @@
                 </article>
 
                 <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-60 shrink-0">
+                    <a href="https://bambuvillaswellnes.com/" target="_blank" class="relative overflow-hidden h-60 shrink-0 block cursor-pointer">
                         <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bambu Villas Wellness" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="https://bambuvillaswellnes.com/" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <span class="bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></span>
                         </div>
-                    </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 p-2 rounded-full md:hidden">
+                            <i class="fas fa-external-link-alt text-yellow-500 text-sm"></i>
+                        </div>
+                    </a>
+
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
                             <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">Wellness</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Bambu Villas Wellness</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                            <a href="https://bambuvillaswellnes.com/" target="_blank">Bambu Villas Wellness</a>
+                        </h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Plataforma web para centro de bienestar. Galerías inmersivas y diseño relajante.
                         </p>
@@ -189,17 +193,24 @@
                 </article>
 
                 <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-60 shrink-0">
+                    <a href="https://sushidragon.me" target="_blank" class="relative overflow-hidden h-60 shrink-0 block cursor-pointer">
                         <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sushi Dragon" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="https://sushidragon.me" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <span class="bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></span>
                         </div>
-                    </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 p-2 rounded-full md:hidden">
+                            <i class="fas fa-external-link-alt text-yellow-500 text-sm"></i>
+                        </div>
+                    </a>
+
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
                             <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">Restaurante</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">Sushi Dragon</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                            <a href="https://sushidragon.me" target="_blank">Sushi Dragon</a>
+                        </h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Sitio web vibrante para restaurante japonés. Menú interactivo y reservas.
                         </p>
@@ -211,17 +222,24 @@
                 </article>
 
                 <article class="bg-card rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-2 group border border-gray-800 flex flex-col h-full">
-                    <div class="relative overflow-hidden h-60 shrink-0">
+                    <a href="http://app-utopia.me/" target="_blank" class="relative overflow-hidden h-60 shrink-0 block cursor-pointer">
                         <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="App Utopia" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="project-overlay absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                            <a href="http://app-utopia.me/" target="_blank" class="project-btn bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm transform scale-90 group-hover:scale-100 transition-transform duration-300 hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></a>
+                        
+                        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                            <span class="bg-yellow-500 text-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white hover:text-black">Visitar Sitio <i class="fas fa-external-link-alt ml-1"></i></span>
                         </div>
-                    </div>
+                        <div class="absolute bottom-3 right-3 bg-black/60 p-2 rounded-full md:hidden">
+                            <i class="fas fa-external-link-alt text-yellow-500 text-sm"></i>
+                        </div>
+                    </a>
+
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="flex justify-between items-center mb-3">
                             <span class="text-yellow-500 text-xs font-bold uppercase tracking-wider bg-yellow-500/10 px-2 py-1 rounded">App Landing</span>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">App Utopia</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                            <a href="http://app-utopia.me/" target="_blank">App Utopia</a>
+                        </h3>
                         <p class="text-gray-400 text-sm mb-4 flex-grow">
                             Landing page moderna optimizada para conversión y descargas.
                         </p>
